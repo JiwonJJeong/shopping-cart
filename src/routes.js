@@ -1,3 +1,7 @@
+import Home from './Home.jsx'
+import Items from './Items.jsx'
+import Checkout from './Checkout.jsx'
+
 const routes = [
     {
       path: '/',
