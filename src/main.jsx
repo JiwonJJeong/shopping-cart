@@ -5,26 +5,9 @@ import './index.css'
 import Home from './Home.jsx'
 import Items from './Items.jsx'
 import Checkout from './Checkout.jsx'
+import routes from "./routes.js"
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: "item/:itemId",
-    element: <Item />,
-  },
-  {
-    path: "items",
-    element: <Items />,
-  },
-  {
-    path: "checkout",
-    element: <Checkout />,
-  }
-])
+const router = createBrowserRouter(routes)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
