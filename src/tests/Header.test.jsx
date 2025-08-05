@@ -25,5 +25,16 @@ describe("Header", () => {
         const header = screen.getByRole("heading");
         expect(header.textContent).toMatch(/The Odin Shop/i);
     });
+    it("links have destination attributes", () => {
+        render(
+            <MemoryRouter>
+                <Header />
+            </MemoryRouter>
+    );
+        const links = screen.queryAllByRole("link");
+        expect(links[0].getAttribute("href")).toBe("/");
+        expect(links[1].getAttribute("href")).toBe("/items");
+        expect(links[2].getAttribute("href")).toBe("/checkout");
+    });
 
 })
