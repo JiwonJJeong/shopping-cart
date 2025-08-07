@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import ItemCard  from "./ItemCard.jsx"
+import { Link } from 'react-router-dom';
 
 export default function Items(){
     const [items, setItems] = useState([]);
@@ -61,6 +62,11 @@ export default function Items(){
                 boughtCount={boughtCounts[item.id]}
                 setBoughtCount={changeBoughtCountOfId(item.id)} // partial application
             />)}
+            <aside>
+                <h2>Cart</h2>
+                {boughtCounts}
+                <Link to="/checkout">Go to Cart</Link>
+            </aside>
         </>
     )
 }

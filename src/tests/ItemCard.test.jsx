@@ -7,7 +7,7 @@ describe("Item Card", () => {
   it("renders image, title, and price", () => {
     const mockImage = "https://via.placeholder.com/150";
     const mockTitle = "Test Item";
-    const mockPrice = "$10.99";
+    const mockPrice = 10.99;
     const mockSetBoughtCounts = vi.fn();
 
     render(
@@ -28,7 +28,7 @@ describe("Item Card", () => {
   it("render buy button if bought count is 0", async () => {
     const mockImage = "https://via.placeholder.com/150";
     const mockTitle = "Test Item";
-    const mockPrice = "$10.99";
+    const mockPrice = 10.99;
     const mockSetBoughtCounts = vi.fn();
     const user = userEvent.setup();
 
@@ -58,7 +58,7 @@ describe("Item Card", () => {
   it("render increment/decrement buttons and bought count if bought count > 0", async () => {
     const mockImage = "https://via.placeholder.com/150";
     const mockTitle = "Test Item";
-    const mockPrice = "$10.99";
+    const mockPrice = 10.99;
     const mockSetBoughtCounts = vi.fn();
     const mockBoughtCount = 2;
 
