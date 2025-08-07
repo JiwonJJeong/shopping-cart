@@ -8,9 +8,9 @@ export default function ItemCard(img, title, boughtCount, setBoughtCount){
             <img></img>
             <h2>{title}</h2>
             <div className="buy buttons">
-                <button>-</button>
+                <button onClick={()=>setBoughtCount(boughtCount-1)}>-</button>
                 <p>{boughtCount}</p>
-                <button>+</button>
+                <button onClick={()=>setBoughtCount(boughtCount+1)}>+</button>
             </div>
         </article>
     )
