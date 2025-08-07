@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import ItemCard  from "./ItemCard.jsx"
 import { Link } from 'react-router-dom';
+import CartItem from "./CartItem.jsx"
 
 export default function Items(){
     const [items, setItems] = useState([]);
@@ -64,7 +65,14 @@ export default function Items(){
             />)}
             <aside>
                 <h2>Cart</h2>
-                {boughtCounts}
+                {Object.entries(boughtCounts).filter((_,val)=>val > 0).map((key,val)=>
+                    <CartItem
+                        img={items[key].img}
+                        price={items[key].price}
+                        boughtCount={val}
+                        setBoughtCount={changeBoughtCountOfId(key)}
+                    />)
+                }
                 <Link to="/checkout">Go to Cart</Link>
             </aside>
         </>
