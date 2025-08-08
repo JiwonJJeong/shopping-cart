@@ -8,6 +8,7 @@ export default function Items(){
     const [error, setError]= useState(false);
     const [loading, setLoading] = useState(true);
     const [boughtCounts, setBoughtCounts] = useState({}); // a dictionary of key as the id of bought item and value as number of bought
+    // There is no item id 0 and item ids start at 1
 
     useEffect(() => {
         const fetchData = async()=> {
@@ -69,8 +70,8 @@ export default function Items(){
                 {!loading && Object.entries(boughtCounts).filter(([_,val])=>val > 0).map(([key,val])=>
                     <CartItem
                         key={key}
-                        img={items[key].img}
-                        price={items[key].price}
+                        img={items[key-1].img}
+                        price={items[key-1].price}
                         boughtCount={val}
                         setBoughtCount={(newCount)=>changeBoughtCountOfId(key)(newCount)}
                     />)
