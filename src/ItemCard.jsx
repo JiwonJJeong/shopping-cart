@@ -3,16 +3,9 @@ export default function ItemCard({img, title, boughtCount, setBoughtCount}) {
     <article>
       <img src={img}></img>
       <h2>{title}</h2>
-      {(boughtCount > 0) && (
-        <div className="buy buttons">
-          <button onClick={() => setBoughtCount(boughtCount - 1)} aria-label="decrease buy count">-</button>
-          <p>{boughtCount}</p>
-          <button onClick={() => setBoughtCount(boughtCount + 1)} aria-label="increase buy count">+</button>
-        </div>
-      )}
-      {(boughtCount == 0) && (
-        <button onClick={() => setBoughtCount(1)}>Buy</button>
-      )}
+      <button onClick={()=>{
+        console.log(`add ${title } to cart`);
+        setBoughtCount(boughtCount+1)}}>Add to Cart</button>
     </article>
   );
 }

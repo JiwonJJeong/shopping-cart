@@ -43,6 +43,7 @@ export default function Items(){
         const newBoughtCounts = {...boughtCounts};
         newBoughtCounts[id] = newCount;
         setBoughtCounts(newBoughtCounts);
+        console.log(`Item ${id} bought count: ${newCount}`)
     }
 
     if (error){
@@ -61,16 +62,17 @@ export default function Items(){
                 title={item.title} 
                 price={item.price}
                 boughtCount={boughtCounts[item.id]}
-                setBoughtCount={changeBoughtCountOfId(item.id)} // partial application
+                setBoughtCount={(newCount)=>changeBoughtCountOfId(item.id)(newCount)} // partial application
             />)}
             <aside>
                 <h2>Cart</h2>
-                {Object.entries(boughtCounts).filter((_,val)=>val > 0).map((key,val)=>
+                {!loading && Object.entries(boughtCounts).filter(([_,val])=>val > 0).map(([key,val])=>
                     <CartItem
+                        key={key}
                         img={items[key].img}
                         price={items[key].price}
                         boughtCount={val}
-                        setBoughtCount={changeBoughtCountOfId(key)}
+                        setBoughtCount={(newCount)=>changeBoughtCountOfId(key)(newCount)}
                     />)
                 }
                 <Link to="/checkout">Go to Cart</Link>

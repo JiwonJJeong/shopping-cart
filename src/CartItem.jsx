@@ -21,11 +21,11 @@ export default function CartItem({img, price, boughtCount, setBoughtCount}){
         <article>
             <img src={img}></img>
             <p>${price*boughtCount}</p>
-            {boughtCount <10 && <select name="buy count">
+            {boughtCount <10 && <select name="buy count" value={boughtCount}>
                 {Array.from({ length: 9 }, (_, i) => i + 1).map((i)=>
-                    <option value={i} selected={i==boughtCount} onClick={handleOptionClick(i)}></option>
+                    <option key={i} value={i} onClick={()=>handleOptionClick(i)}></option>
                 )}
-                <option value="10+" onClick={handleOptionClick(10)}></option>
+                <option key="10" value="10+" onClick={()=>handleOptionClick(10)}></option>
             </select>}
             {boughtCount >= 10 && <form>
                     <input type="number" defaultValue={boughtCount}></input>
