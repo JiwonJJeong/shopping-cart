@@ -15,19 +15,6 @@ export default function Items(){
                 boughtCount={boughtCounts[item.id]}
                 setBoughtCount={(newCount)=>changeBoughtCountOfId(item.id)(newCount)} // partial application
             />)}
-            <aside>
-                <h2>Cart</h2>
-                {!loading && Object.entries(boughtCounts).filter(([_,val])=>val > 0).map(([key,val])=>
-                    <CartItem
-                        key={key}
-                        img={items[key-1].img}
-                        price={items[key-1].price}
-                        boughtCount={val}
-                        setBoughtCount={(newCount)=>changeBoughtCountOfId(key)(newCount)}
-                    />)
-                }
-                <Link to="/checkout">Go to Cart</Link>
-            </aside>
         </>
     )
 }
