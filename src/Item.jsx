@@ -1,12 +1,15 @@
-import {useParams} from "react-router-dom";
+import {useParams, useOutletContext} from "react-router-dom";
 
 export default function Item(){
-    const {id} = useParams();   
+    const {id} = useParams(); 
+    const [items] = useOutletContext();
+
+    const specificItem = items[id];
 
     return (
         <>
             <p>This is ONE item.</p>
-            <p>The item requested was {id}</p>
+            <p>The item requested was {specificItem.title}</p>
         </>
     )
 }
