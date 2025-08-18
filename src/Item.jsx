@@ -1,16 +1,21 @@
-import {useParams, useOutletContext} from "react-router-dom";
+import {Link, useParams, useOutletContext} from "react-router-dom";
 import CartAside from "./CartAside";
 
 export default function Item(){
     const {id} = useParams(); 
-    const [items] = useOutletContext();
+    const [items, changeBoughtCountOfId] = useOutletContext();
 
     const specificItem = items[id];
+    const changeBoughtCountOfSpecific = changeBoughtCountOfId(id);
 
     return (
         <>
-            <p>This is ONE item.</p>
-            <p>The item requested was {specificItem.title}</p>
+            <Link to="/items">Back to items</Link>
+            <h1>{specificItem.title}</h1>
+            <img src={specificItem.img}></img>
+            <p>{specificItem.price}</p>
+            <p>{specificItem.description}</p>
+            <button onClick={changeBoughtCountOfSpecific}>Buy</button>
             <CartAside></CartAside>
         </>
     )
