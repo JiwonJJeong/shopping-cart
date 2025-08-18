@@ -88,10 +88,10 @@ describe("Cart item", () => {
     );
 
     // Find the select element
-    const fourthOption = screen.getAllByRole("option")[4];
+    const select = screen.getByRole("combobox");
 
     const user = userEvent.setup();
-    await user.click(fourthOption);
+    await user.selectOptions(select, "4");
 
     expect(mockSetBoughtCounts).toHaveBeenCalledWith(4);
   });
