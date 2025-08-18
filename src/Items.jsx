@@ -1,6 +1,6 @@
 import ItemCard  from "./ItemCard.jsx"
 import { Link, useOutletContext } from 'react-router-dom';
-import CartItem from "./CartItem.jsx"
+import CartAside from "./CartAside.jsx"
 
 export default function Items(){
     const [items, boughtCounts, changeBoughtCountOfId] = useOutletContext();
@@ -15,6 +15,7 @@ export default function Items(){
                 boughtCount={boughtCounts[item.id]}
                 setBoughtCount={(newCount)=>changeBoughtCountOfId(item.id)(newCount)} // partial application
             />)}
+            <CartAside></CartAside>
         </>
     )
 }
