@@ -2,11 +2,12 @@ import {Link, useParams, useOutletContext} from "react-router-dom";
 import CartAside from "./CartAside";
 
 export default function Item(){
-    const {id} = useParams(); 
+    const {itemId} = useParams(); 
     const {items, changeBoughtCountOfId, boughtCounts} = useOutletContext();
+    const id = Number(itemId);
 
-    const specificItem = items[id];
-    const incrementBoughtCountOfSpecific = changeBoughtCountOfId(id)(boughtCounts[id] + 1 || 1);
+    const specificItem = items[id-1];
+    const incrementBoughtCountOfSpecific = ()=> changeBoughtCountOfId(id)(boughtCounts[id] + 1 || 1);
 
     return (
         <>
