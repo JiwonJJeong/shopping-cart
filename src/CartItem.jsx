@@ -20,7 +20,7 @@ export default function CartItem({ img, price, boughtCount, setBoughtCount }) {
   return (
     <article>
       <img src={img} height="100px"></img>
-      <p>${price * boughtCount}</p>
+      <p>${(price * boughtCount).toFixed(2)}</p>
       {boughtCount < 10 && (
         <select
           name="buy count"

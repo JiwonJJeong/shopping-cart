@@ -13,7 +13,7 @@ export default function Item(){
             <Link to="/items">Back to items</Link>
             <h1>{specificItem.title}</h1>
             <img src={specificItem.img}></img>
-            <p>{specificItem.price}</p>
+            <p>{specificItem.price.toFixed(2)}</p>
             <p>{specificItem.description}</p>
             <button onClick={incrementBoughtCountOfSpecific}>Add to Cart</button>
             <CartAside></CartAside>

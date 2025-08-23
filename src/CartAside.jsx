@@ -10,7 +10,7 @@ export default function CartAside() {
     return(
         <aside>
         <h2>Cart</h2>
-        {(totalPrice > 0) && <p>Total: ${totalPrice}</p>}
+        {(totalPrice > 0) && <p>Total: ${totalPrice.toFixed(2)}</p>}
         <Link to="/checkout">Go to Cart</Link>
         {Object.entries(boughtCounts).filter(([_,val])=>val > 0).map(([key,val])=>
             <CartItem
