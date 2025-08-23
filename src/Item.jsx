@@ -6,7 +6,7 @@ export default function Item(){
     const {items, changeBoughtCountOfId, boughtCounts} = useOutletContext();
 
     const specificItem = items[id];
-    const incrementBoughtCountOfSpecific = changeBoughtCountOfId(id)(boughtCounts.id +1);
+    const incrementBoughtCountOfSpecific = changeBoughtCountOfId(id)(boughtCounts[id] + 1 || 1);
 
     return (
         <>

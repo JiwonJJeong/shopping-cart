@@ -12,7 +12,7 @@ export default function Items(){
                 img= {item.img}
                 title={item.title} 
                 price={item.price}
-                boughtCount={boughtCounts[item.id]}
+                boughtCount={boughtCounts[item.id] || 0}
                 setBoughtCount={(newCount)=>changeBoughtCountOfId(item.id)(newCount)} // partial application
             />)}
             <CartAside></CartAside>
