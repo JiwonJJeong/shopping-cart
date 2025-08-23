@@ -2,6 +2,7 @@
 
 ## Learning Goals
 * React Testing: Use React Testing Library to test UI and DOM elements
+* Isolated Unit Testing: Use mocks on child components, data, and functions to isolate tests
 * Client-side Routing: Use React Router to implement client-side routing
 * Upgrade Fetching Data in React: Use custom hooks and error handling to abstract and improve data fetching
 
@@ -21,3 +22,4 @@
 * Correctly pass functions with parameters to props and attributes using anonymous functions ()=>func(...)
 * Querying by role in React testing uses the accessible tag (eg: "paragraph", not "p")
 * User event simulations should be async code
+* There are pros and cons to storing data as an array vs object in the context or in the return of a custom hook
