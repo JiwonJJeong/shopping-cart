@@ -1,8 +1,9 @@
 import Header from "./Header.jsx"
 import { Outlet } from 'react-router-dom';
 import {useState } from "react"
-import {useFetchData} from "./Fetch.jsx"
+import useFetchData from "./Fetch.jsx"
 import ErrorPage from "./ErrorPage.jsx"
+import LoadingPage from "./LoadingPage.jsx"
 
 export default function Layout(){
   const [boughtCounts, setBoughtCounts] = useState({}); // a dictionary of key as the id of bought item and value as number of bought
