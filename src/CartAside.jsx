@@ -5,7 +5,7 @@ export default function CartAside() {
     const {boughtCounts, items, changeBoughtCountOfId} = useOutletContext();
 
     // destructure (pattern matching) of the current value in reduce funtion with [...]
-    const totalPrice = Object.entries(boughtCounts).reduce((sum, [id, count])=> sum + count * items[id].price, 0);
+    const totalPrice = Object.entries(boughtCounts).reduce((sum, [id, count])=> sum + count * items[id-1].price, 0);
 
     return(
         <aside>
