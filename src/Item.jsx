@@ -3,10 +3,10 @@ import CartAside from "./CartAside";
 
 export default function Item(){
     const {id} = useParams(); 
-    const [items, changeBoughtCountOfId] = useOutletContext();
+    const {items, changeBoughtCountOfId, boughtCounts} = useOutletContext();
 
     const specificItem = items[id];
-    const changeBoughtCountOfSpecific = changeBoughtCountOfId(id);
+    const incrementBoughtCountOfSpecific = changeBoughtCountOfId(id)(boughtCounts.id +1);
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function Item(){
             <img src={specificItem.img}></img>
             <p>{specificItem.price}</p>
             <p>{specificItem.description}</p>
-            <button onClick={changeBoughtCountOfSpecific}>Buy</button>
+            <button onClick={incrementBoughtCountOfSpecific}>Add to Cart</button>
             <CartAside></CartAside>
         </>
     )

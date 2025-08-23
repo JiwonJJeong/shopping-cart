@@ -3,7 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import CartAside from "./CartAside.jsx"
 
 export default function Items(){
-    const [items, boughtCounts, changeBoughtCountOfId] = useOutletContext();
+    const {items, boughtCounts, changeBoughtCountOfId} = useOutletContext();
 
     return (
         <>

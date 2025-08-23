@@ -21,7 +21,7 @@ export default function Layout(){
     return (
       <>
         <Header />
-        {!loading && !error && <Outlet context={[boughtCounts, items, changeBoughtCountOfId]}/>}
+        {!loading && !error && <Outlet context={{boughtCounts, items, changeBoughtCountOfId}}/>}
         {loading && !error && <LoadingPage/>}
         {error != false && <ErrorPage/>}
       </>

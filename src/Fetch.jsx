@@ -41,6 +41,6 @@ export default function useFetchData() {
     fetchData();
   }, []);
 
-  return { data: itemData, loading, error };
+  return [ itemData, loading, error ];
 }
 
