@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import ItemCard from "../ItemCard.jsx";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter} from "react-router-dom";
 
 describe("Item Card", () => {
   it("renders image, title, and price", () => {
@@ -11,13 +12,15 @@ describe("Item Card", () => {
     const mockSetBoughtCounts = vi.fn();
 
     render(
-      <ItemCard
-        img={mockImage}
-        title={mockTitle}
-        price={mockPrice}
-        boughtCount={0}
-        setBoughtCount={mockSetBoughtCounts}
-      ></ItemCard>
+      <MemoryRouter>
+        <ItemCard
+          img={mockImage}
+          title={mockTitle}
+          price={mockPrice}
+          boughtCount={0}
+          setBoughtCount={mockSetBoughtCounts}
+        ></ItemCard>
+      </MemoryRouter>
     );
 
     const image = screen.getByRole("img");
@@ -33,13 +36,15 @@ describe("Item Card", () => {
     const user = userEvent.setup();
 
     render(
-      <ItemCard
-        img={mockImage}
-        title={mockTitle}
-        price={mockPrice}
-        boughtCount={0}
-        setBoughtCount={mockSetBoughtCounts}
-      ></ItemCard>
+      <MemoryRouter>
+        <ItemCard
+          img={mockImage}
+          title={mockTitle}
+          price={mockPrice}
+          boughtCount={0}
+          setBoughtCount={mockSetBoughtCounts}
+        ></ItemCard>
+      </MemoryRouter>
     );
 
     // Query the "Buy" button
@@ -54,5 +59,28 @@ describe("Item Card", () => {
     // Assert that the mock function is called with the correct value
     expect(mockSetBoughtCounts).toHaveBeenCalledTimes(1);
     expect(mockSetBoughtCounts).toHaveBeenCalledWith(1); // Ensure the function is invoked with 1
+  });
+  it("clicking image or title is link to its item page", async () => {
+    const mockImage = "https://via.placeholder.com/150";
+    const mockTitle = "Test Item";
+    const mockPrice = 10.99;
+    const mockSetBoughtCounts = vi.fn();
+
+    render(
+      <MemoryRouter>
+        <ItemCard
+          img={mockImage}
+          title={mockTitle}
+          id={3}
+          price={mockPrice}
+          boughtCount={0}
+          setBoughtCount={mockSetBoughtCounts}
+        ></ItemCard>
+      </MemoryRouter>
+    );
+
+    const link = screen.getByRole("link");
+
+    expect(link).toHaveAttribute("href", "/item/3");
   });
 });

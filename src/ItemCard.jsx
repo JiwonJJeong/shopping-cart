@@ -1,8 +1,12 @@
-export default function ItemCard({img, title, boughtCount, setBoughtCount, price}) {
+import { Link } from 'react-router-dom';
+
+export default function ItemCard({img, title, boughtCount, setBoughtCount, price, id}) {
   return (
     <article>
+      <Link to={`/item/${id}`}>
       <img src={img} height="200px"></img>
       <h2>{title}</h2>
+      </Link>
       <p>${price.toFixed(2)}</p>
       <button onClick={()=>{
         console.log(`add ${title } to cart`);

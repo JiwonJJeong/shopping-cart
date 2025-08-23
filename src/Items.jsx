@@ -9,6 +9,7 @@ export default function Items(){
         <>
             {items.map((item) => <ItemCard
                 key={item.id}
+                id={item.id}
                 img= {item.img}
                 title={item.title} 
                 price={item.price}
