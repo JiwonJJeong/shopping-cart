@@ -1,0 +1,28 @@
+
+section.home {
+
+    div.image{
+        flex: 1 1 40%;
+        max-width: 500px;
+
+        background-image: url("../assets/rainforest.jpg");
+        background-size: cover;      /* Scales image to cover */
+        background-position: center; /* Centers image */
+        background-repeat: no-repeat;
+
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            padding: 20px;
+            max-width: calc(100% - 40px);
+            height: auto;
+            display: block;
+        }
+    }
+    display: flex;
+
+    div.content{
+        flex:1 1 60%;
+    }
+}

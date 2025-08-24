@@ -18,8 +18,14 @@
 * Consider: Learned from PL:A(https://www.coursera.org/learn/programming-languages#modules): Higher-ordered functions lets me return a function, and partial application on curried functions lets me return a function with some arguments fixed.
 * Solution: Create a single, general curried function. Then partially apply the id to pass a customized function to each of 40 components.
 
+## Attribution
+Photo by <a href="https://unsplash.com/@paulius005?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulius Dragunas</a> on <a href="https://unsplash.com/photos/time-lapse-photography-of-multi-step-waterfalls-cIxcxnwsnoI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      
+      
+
 ## Personal Takeaways
 * Correctly pass functions with parameters to props and attributes using anonymous functions ()=>func(...)
 * Querying by role in React testing uses the accessible tag (eg: "paragraph", not "p")
 * User event simulations should be async code
 * There are pros and cons to storing data as an array vs object in the context or in the return of a custom hook
+* Example of complex css selector >*:not(header) = any immediate child element that is not header

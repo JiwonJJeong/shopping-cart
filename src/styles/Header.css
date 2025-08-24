@@ -1,0 +1,78 @@
+body{
+  margin:0;
+  padding:0;
+}
+
+div#root{
+  display:flex;
+  flex-direction:column;
+  height: 100vh;
+
+  >*:not(header){
+    flex:1
+  }
+}
+
+header {
+    --background-color: #ffd7d7;
+    --text-color: black;
+    --text-color-alt: rgb(0, 89, 161);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+
+  header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav li {
+    margin: 0;
+  }
+  
+/* Links */
+header nav a {
+    position: relative;        /* Needed for pseudo-element */
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  /* Create underline */
+  header nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;               /* Adjust spacing from text */
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color-alt);  /* Accent underline */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover effect */
+  header nav a:hover {
+    color: var(--text-color-alt);
+  }
+  
+  header nav a:hover::after {
+    transform: translateX(-50%) scaleX(1);
+  }
