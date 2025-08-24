@@ -1,6 +1,7 @@
 
 section.home {
-    --accent-color: #ffd7d7;
+    --accent-color: #ffabab;
+    background-color: #ffe7e7;
     div.image{
         flex: 1 1 40%;
         max-width: 500px;

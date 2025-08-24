@@ -9,14 +9,22 @@ div#root{
   height: 100vh;
 
   >*:not(header){
-    flex:1
+    flex:1;
+    padding-top: 59px;
   }
 }
 
 header {
-    --background-color: #ffd7d7;
+    --background-color: #ffabab;
     --text-color: black;
     --text-color-alt: rgb(0, 89, 161);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;        /* span full width */
+    box-sizing: border-box;
+    z-index: 1000;      /* keep it above other elements */
+    background: #222;   /* give it a solid background */
 
     display: flex;
     justify-content: space-between;
