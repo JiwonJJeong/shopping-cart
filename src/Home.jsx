@@ -5,21 +5,32 @@ import "./styles/Home.css";
 export default function Home() {
   return (
     <section className="home">
-        <div className="image">
+      <div className="image">
         <img src={OdinPng}></img>
-        </div>
+      </div>
 
       <div className="content">
         <p>Simplicity, elegance, peace</p>
         <hr></hr>
-        <h1>The Shop for Web Devs</h1>
+        <h1>The Shop for Web Devs By Web Devs</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat.
         </p>
-        <Link to="/items">See Products</Link>
+        <Link to="/items">
+          <button>See Products</button>
+        </Link>
+        <article>
+          <h2>Our vision and philosophy</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </article>
       </div>
     </section>
   );
