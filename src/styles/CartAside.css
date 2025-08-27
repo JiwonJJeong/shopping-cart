@@ -85,7 +85,7 @@ aside{
         }
     }
 }
-main{
+main.aside, main.cards{
     width: calc(100% - 150px);
     box-sizing: border-box;
 }

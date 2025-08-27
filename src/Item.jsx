@@ -13,7 +13,7 @@ export default function Item() {
 
   return (
     <>
-      <main>
+      <main className='aside'>
         <Link to="/items">Back to items</Link>
         <h1>{specificItem.title}</h1>
         <img src={specificItem.img} width="350px"></img>

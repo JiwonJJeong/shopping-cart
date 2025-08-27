@@ -1,0 +1,77 @@
+main{
+    width:100%;
+}
+div.checkout h1{
+    margin-left: 40px;
+}
+
+div.cart{
+    margin: 20px;
+    background-color: white;
+    border: 2px solid rgb(141, 28, 72);
+    border-style: ridge;
+    ul{
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        li{
+            list-style: none;
+            display: grid;
+            grid-template-columns: 250px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            column-gap: 1rem;      
+            grid-template-rows: 80px;
+
+            align-items: center;
+            gap: 20px;
+            p:first-child{
+                width: 250px;
+            }
+            >div:first-child{
+                height: 80px;
+                display:flex;
+                flex-direction:row;
+                align-items: center;
+            }
+            >div:last-child{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                width: 100%; /* make sure it doesn’t exceed the parent */
+                align-items:center;
+                div{
+                    display: flex;
+                    text-align: end;
+                    gap: 5px;
+                    min-width: 0; /* critical for flex children inside grid to allow shrinking */
+                    button{
+                        padding: 2px 7px;
+                    }
+                }
+            }
+        }
+        p{
+            margin:0;
+        }
+
+        img{
+            max-height: 100%;  /* no taller than container */
+            width: auto;
+            max-width: 100px;
+            flex-shrink: 1;       
+        }
+    }
+
+}
+
+div.cart{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+div.checkout-button{
+    margin-bottom: 20px;
+    display:flex;
+    gap: 30px;
+}
