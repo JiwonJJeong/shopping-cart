@@ -5,7 +5,7 @@ export default function Header(){
 
 
     return (
-        <header>
+        <header className="page">
             <h1>The Odin Shop</h1>
             <nav>
                 <ul>

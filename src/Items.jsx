@@ -8,7 +8,7 @@ export default function Items() {
 
   return (
     <>
-      <div className="cards">
+      <main className="cards">
         {items.map((item) => (
           <ItemCard
             key={item.id}
@@ -22,7 +22,7 @@ export default function Items() {
             } // partial application
           />
         ))}
-      </div>
+      </main>
       <CartAside></CartAside>
     </>
   );

@@ -15,7 +15,7 @@ div#root{
   }
 }
 
-header {
+header.page {
     --background-color: #ffabab;
     --text-color: black;
     --text-color-alt: rgb(0, 89, 161);

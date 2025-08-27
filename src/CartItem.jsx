@@ -20,7 +20,8 @@ export default function CartItem({ img, price, boughtCount, setBoughtCount }) {
   return (
     <article>
       <img src={img} height="100px"></img>
-      <p>${(price * boughtCount).toFixed(2)}</p>
+      <p className="price"><span>$</span>{(price * boughtCount).toFixed(2)}</p>
+      <div>
       {boughtCount < 10 && (
         <select
           name="buy count"
@@ -43,7 +44,8 @@ export default function CartItem({ img, price, boughtCount, setBoughtCount }) {
           <button onClick={handleUpdateCountClick}>Update</button>
         </form>
       )}
-      <button onClick={handleTrashClick}>🗑️</button>
+      <button aria-label="remove from cart" onClick={handleTrashClick}>🗑️</button>
+      </div>
     </article>
   );
 }
