@@ -23,6 +23,7 @@ export default function useFetchData() {
             title: responseObj.title,
             price: responseObj.price,
             img: responseObj.image,
+            description: responseObj.description,
           };
           return item;
         };
