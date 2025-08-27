@@ -1,0 +1,36 @@
+p.price {
+  font-size: 25px;
+  font-size: 1.7rem; /* larger than body text */
+  font-weight: 700; /* bold */
+  color: #af0000; /* accent color for visibility */
+  margin: 0.5rem 0; /* spacing around the price */
+  display: inline-block;
+
+  span {
+    font-size: 20px;
+  }
+}
+
+button.buy-button {
+  background-color: #af0000; /* nice blue */
+  color: white; /* white text */
+  padding: 0.6rem 1.2rem; /* breathing space */
+  border: none; /* remove default border */
+  border-radius: 8px; /* rounded corners */
+  cursor: pointer; /* pointer on hover */
+  font-size: 1rem; /* readable text */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.buy-button:hover {
+  background-color: #ffb6b6; /* darker blue */
+  color: black;
+  transform: translateY(-2px); /* little lift effect */
+}
+
+button.buy-button:active {
+  transform: translateY(0); /* reset when clicked */
+  background-color: rgb(82, 218, 82);
+  transition: background-color 0.1s ease;
+}

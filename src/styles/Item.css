@@ -1,0 +1,30 @@
+main {
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: 2fr 3fr;
+  padding: 20px;
+  column-gap: 20px;
+
+  a {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  h1 {
+    grid-area: 2 / 1 / 2 / 3;
+    justify-self: center;
+  }
+  img{
+    background-color: white;
+    grid-area: 3 / 1 / 4 / 2;
+    padding: 15px;
+    border-radius: 4px;
+    justify-self: center;
+    max-width: 350px;
+  }
+  div{
+    grid-area: 3 / 2 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

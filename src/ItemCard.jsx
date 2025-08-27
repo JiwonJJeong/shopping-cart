@@ -7,8 +7,8 @@ export default function ItemCard({img, title, boughtCount, setBoughtCount, price
       <img src={img} height="200px"></img>
       <h2>{title}</h2>
       </Link>
-      <p>${price.toFixed(2)}</p>
-      <button onClick={()=>{
+      <p className="price"><span>$</span>{price.toFixed(2)}</p>
+      <button className="buy-button" onClick={()=>{
         console.log(`add ${title } to cart`);
         setBoughtCount(boughtCount+1)}}>Add to Cart</button>
     </article>
