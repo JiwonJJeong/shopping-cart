@@ -1,4 +1,12 @@
-export default function CartItem({ img, price, boughtCount, setBoughtCount }) {
+import { Link } from "react-router-dom";
+
+export default function CartItem({
+  id,
+  img,
+  price,
+  boughtCount,
+  setBoughtCount,
+}) {
   function handleOptionChange(e) {
     const value = Number(e.target.value);
     if (value != boughtCount) {
@@ -19,32 +27,39 @@ export default function CartItem({ img, price, boughtCount, setBoughtCount }) {
 
   return (
     <article>
-      <img src={img} height="100px"></img>
-      <p className="price"><span>$</span>{(price * boughtCount).toFixed(2)}</p>
+      <Link to={`../item/${id}`}>
+        <img src={img} height="100px"></img>
+      </Link>
+      <p className="price">
+        <span>$</span>
+        {(price * boughtCount).toFixed(2)}
+      </p>
       <div>
-      {boughtCount < 10 && (
-        <select
-          name="buy count"
-          value={boughtCount}
-          onChange={handleOptionChange}
-        >
-          {Array.from({ length: 9 }, (_, i) => i + 1).map((i) => (
-            <option key={i} value={i}>
-              {i}
+        {boughtCount < 10 && (
+          <select
+            name="buy count"
+            value={boughtCount}
+            onChange={handleOptionChange}
+          >
+            {Array.from({ length: 9 }, (_, i) => i + 1).map((i) => (
+              <option key={i} value={i}>
+                {i}
+              </option>
+            ))}
+            <option key="10" value="10">
+              10+
             </option>
-          ))}
-          <option key="10" value="10">
-            10+
-          </option>
-        </select>
-      )}
-      {boughtCount >= 10 && (
-        <form>
-          <input type="number" defaultValue={boughtCount}></input>
-          <button onClick={handleUpdateCountClick}>Update</button>
-        </form>
-      )}
-      <button aria-label="remove from cart" onClick={handleTrashClick}>🗑️</button>
+          </select>
+        )}
+        {boughtCount >= 10 && (
+          <form>
+            <input type="number" defaultValue={boughtCount}></input>
+            <button onClick={handleUpdateCountClick}>Update</button>
+          </form>
+        )}
+        <button aria-label="remove from cart" onClick={handleTrashClick}>
+          🗑️
+        </button>
       </div>
     </article>
   );

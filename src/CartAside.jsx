@@ -24,6 +24,7 @@ export default function CartAside() {
         .map(([key, val]) => (
           <CartItem
             key={key}
+            id={key}
             img={items[key - 1].img}
             price={items[key - 1].price}
             boughtCount={val}
