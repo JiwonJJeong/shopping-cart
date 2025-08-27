@@ -2,11 +2,9 @@ aside{
     position: fixed;         
     right: 0;        /* stick to right */
     height: calc(100vh - 59px);   /* full height if you want a sidebar */
-    overflow-y: scroll;
     width: 150px;
     display:flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
     border-left: 1px solid rgb(142, 43, 255);
 
@@ -29,8 +27,16 @@ aside{
         flex-direction:column;
         align-items: center;
         text-align: center;
-        gap: 10px
     }
+    .scrollable {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        overflow-y: scroll;
+        gap: 10px;
+        display:flex;
+        flex-direction:column;
+    }
+
     article{
         display:flex;
         flex-direction:column;

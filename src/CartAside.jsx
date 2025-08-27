@@ -18,6 +18,7 @@ export default function CartAside() {
         {totalPrice > 0 && <p className="price">Total: <span>$</span>{totalPrice.toFixed(2)}</p>}
         <Link to="/checkout">Go to Cart</Link>
       </header>
+      <div className="scrollable">
       {Object.entries(boughtCounts)
         .filter(([_, val]) => val > 0)
         .map(([key, val]) => (
@@ -29,6 +30,7 @@ export default function CartAside() {
             setBoughtCount={(newCount) => changeBoughtCountOfId(key)(newCount)}
           />
         ))}
+        </div>
     </aside>
   );
 }
