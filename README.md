@@ -18,11 +18,12 @@ This is a mock shop website with cart item tracking made with React for The Odin
 ### Higher-order Functions to Limit Repetition
 * Situation: The ItemCard and CartItem components needs a function that updates the buy count for a specific item, taking only the new value as input.
 * Problem: Creating separate functions = repetitive code.
-* Consider: Learned from PL:A(https://www.coursera.org/learn/programming-languages#modules): Higher-ordered functions lets me return a function, and partial application on curried functions lets me return a function with some arguments fixed.
+* Consider: Learned from [PL:A Course](https://www.coursera.org/learn/programming-languages#modules): Higher-ordered functions lets me return a function, and partial application on curried functions lets me return a function with some arguments fixed.
 * Solution: Create a single, general curried function. Then partially apply the id to pass a customized function to each of 40 components.
 
 ## Attribution
 Forest background photo by <a href="https://unsplash.com/@paulius005?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulius Dragunas</a> on <a href="https://unsplash.com/photos/time-lapse-photography-of-multi-step-waterfalls-cIxcxnwsnoI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
 Odin logo by [The Odin Project](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form)
       
       
