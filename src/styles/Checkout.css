@@ -28,7 +28,7 @@ div.cart{
             p:first-child{
                 width: 250px;
             }
-            >div:first-child{
+            >a:first-child{
                 height: 80px;
                 display:flex;
                 flex-direction:row;

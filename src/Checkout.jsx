@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import "./styles/Checkout.css";
 
 export default function Checkout() {
@@ -8,13 +8,12 @@ export default function Checkout() {
     alert("This feature is not implemented in this project. Thank you!");
   }
 
-  const totalPrice = Object.entries(boughtCounts).reduce(
-    (sum, [id, count]) => sum + count * items[id - 1].price,
-    0
-  ).toFixed(2);
+  const totalPrice = Object.entries(boughtCounts)
+    .reduce((sum, [id, count]) => sum + count * items[id - 1].price, 0)
+    .toFixed(2);
 
   return (
-    <div className='checkout'>
+    <div className="checkout">
       <h1>Your shopping cart.</h1>
       <div className="cart">
         <ul>
@@ -22,24 +21,44 @@ export default function Checkout() {
             .filter(([_, val]) => val > 0)
             .map(([key, val]) => (
               <li key={key}>
-                <div>
+                <Link to={`../item/${key}`}>
                   <p>{items[key - 1].title}</p>
                   <img src={items[key - 1].img}></img>
-                </div>
+                </Link>
                 <div>
                   <div>
-                  <p>Amount: {val}</p>
-                  <button className='buy-button' onClick={()=>changeBoughtCountOfId(key)(val+1)}>+</button>
-                  <button className='buy-button' onClick={()=>changeBoughtCountOfId(key)(val-1)}>-</button>
+                    <p>Amount: {val}</p>
+                    <button
+                      aria-label='increase buy count by one'
+                      className="buy-button"
+                      onClick={() => changeBoughtCountOfId(key)(val + 1)}
+                    >
+                      +
+                    </button>
+                    <button
+                      aria-label='decrease buy count by one'
+                      className="buy-button"
+                      onClick={() => changeBoughtCountOfId(key)(val - 1)}
+                    >
+                      -
+                    </button>
                   </div>
-                  <p className='price'><span>$</span>{(items[key-1].price*val).toFixed(2)}</p>
+                  <p className="price">
+                    <span>$</span>
+                    {(items[key - 1].price * val).toFixed(2)}
+                  </p>
                 </div>
               </li>
             ))}
         </ul>
-        <div className='checkout-button'>
-          <p className='price'>Total: <span>$</span>{totalPrice}</p>
-        <button className="buy-button" onClick={handleCheckout}>Checkout</button>
+        <div className="checkout-button">
+          <p className="price">
+            Total: <span>$</span>
+            {totalPrice}
+          </p>
+          <button className="buy-button" onClick={handleCheckout}>
+            Checkout
+          </button>
         </div>
       </div>
     </div>
