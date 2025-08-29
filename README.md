@@ -1,4 +1,7 @@
 # Shopping Cart Application
+This is a mock shop website with cart item tracking made with React for The Odin Project course. The goal was to use React Testing Library and advanced React concepts to use test-driven development and better code modularity in React.
+
+[Try it here!](https://shopping-cart-beta-tan-59.vercel.app/)
 
 ## Learning Goals
 * React Testing: Use React Testing Library to test UI and DOM elements
@@ -19,7 +22,8 @@
 * Solution: Create a single, general curried function. Then partially apply the id to pass a customized function to each of 40 components.
 
 ## Attribution
-Photo by <a href="https://unsplash.com/@paulius005?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulius Dragunas</a> on <a href="https://unsplash.com/photos/time-lapse-photography-of-multi-step-waterfalls-cIxcxnwsnoI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Forest background photo by <a href="https://unsplash.com/@paulius005?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulius Dragunas</a> on <a href="https://unsplash.com/photos/time-lapse-photography-of-multi-step-waterfalls-cIxcxnwsnoI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Odin logo by [The Odin Project](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form)
       
       
 
@@ -29,3 +33,4 @@ Photo by <a href="https://unsplash.com/@paulius005?utm_content=creditCopyText&ut
 * User event simulations should be async code
 * There are pros and cons to storing data as an array vs object in the context or in the return of a custom hook
 * Example of complex css selector >*:not(header) = any immediate child element that is not header
+* MemoryRouter is a great way to test components using react-router-dom
