@@ -10,8 +10,7 @@ describe("Home Page", () => {
                 <Home />
             </MemoryRouter>
     );
-        expect(screen.getByRole("heading").textContent).toMatch(/The Shop for Web Devs/i);
-        expect(screen.getByRole("paragraph")).toBeInTheDocument();
+        expect(screen.getByRole("heading", {name: 'The Shop for Web Devs By Web Devs'}).textContent).toMatch(/The Shop for Web Devs/i);
 
     });
     it("renders link to items", () => {

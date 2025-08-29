@@ -88,6 +88,6 @@ describe("Cart aside", () => {
         </Routes>
       </MemoryRouter>
     );
-    expect(screen.getByRole("paragraph").textContent).toMatch("Total: $4020");
+    expect(screen.getByRole("paragraph").textContent).toMatch("Total: $402.00");
   });
 });

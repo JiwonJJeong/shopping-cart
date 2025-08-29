@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import CartItem from "../CartItem.jsx";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter } from "react-router-dom";
 
 describe("Cart item", () => {
   it("renders image and delete button", () => {
@@ -10,12 +11,14 @@ describe("Cart item", () => {
     const mockSetBoughtCounts = vi.fn();
     const mockBoughtCount = 3;
     render(
-      <CartItem
-        img={mockImage}
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          img={mockImage}
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
     expect(screen.getByRole("img")).toHaveAttribute("src", mockImage);
     expect(screen.getByRole("button").textContent).toBe("🗑️");
@@ -25,11 +28,13 @@ describe("Cart item", () => {
     const mockSetBoughtCounts = vi.fn();
     const mockBoughtCount = 3;
     render(
-      <CartItem
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
     expect(screen.getByRole("paragraph").textContent).toMatch("$32.97");
   });
@@ -39,31 +44,34 @@ describe("Cart item", () => {
     const mockSetBoughtCounts = vi.fn();
     const mockBoughtCount = 3;
     render(
-      <CartItem
-        img={mockImage}
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          img={mockImage}
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
     const user = userEvent.setup();
-    const trashButton = screen.getByRole("button")
-    
+    const trashButton = screen.getByRole("button");
+
     await user.click(trashButton);
 
     expect(mockSetBoughtCounts).toHaveBeenCalledWith(0);
-
   });
   it("renders an select list with 10 options and one preselected if boughtCount <10", () => {
     const mockPrice = 10.99;
     const mockSetBoughtCounts = vi.fn();
     const mockBoughtCount = 3;
     render(
-      <CartItem
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
 
     const selectElement = screen.getByRole("combobox");
@@ -80,11 +88,13 @@ describe("Cart item", () => {
     const mockBoughtCount = 3;
 
     render(
-      <CartItem
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
 
     // Find the select element
@@ -101,11 +111,13 @@ describe("Cart item", () => {
     const mockBoughtCount = 10;
 
     render(
-      <CartItem
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
 
     const inputElement = screen.getByRole("spinbutton");
@@ -119,11 +131,13 @@ describe("Cart item", () => {
     const mockBoughtCount = 10;
 
     render(
-      <CartItem
-        price={mockPrice}
-        boughtCount={mockBoughtCount}
-        setBoughtCount={mockSetBoughtCounts}
-      ></CartItem>
+      <MemoryRouter>
+        <CartItem
+          price={mockPrice}
+          boughtCount={mockBoughtCount}
+          setBoughtCount={mockSetBoughtCounts}
+        ></CartItem>
+      </MemoryRouter>
     );
 
     const inputElement = screen.getByRole("spinbutton");
