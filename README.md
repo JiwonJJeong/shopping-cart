@@ -13,7 +13,7 @@ This is a mock shop website with cart item tracking made with React for The Odin
 ### Data Structure Choice
 * Situation: Each shop item should have its own buy count data.
 * Problem: Creating separate states = repetitive code.
-* Consider: In the future, my items might be selected or randomized, so relying on array index as an ID is not the best.
+* Consider: In the future, some items will be removed, added, and shifted around, so relying on array index as an ID is not the best.
 * Solution: Create a dictionary of item buy counts with keys as the item ids.
 ### Higher-order Functions to Limit Repetition
 * Situation: The ItemCard and CartItem components needs a function that updates the buy count for a specific item, taking only the new value as input.
